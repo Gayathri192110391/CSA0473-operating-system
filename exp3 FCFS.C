@@ -1,19 +1,44 @@
 #include<stdio.h>
-void main()
+#include<stdlib.h>
+struct fcfs
 {
-int n,bt[20],wt[20],tat[20],i,j; float avwt=0,avtat=0;printf("Enter total number of processes(maximum 20):");scanf("%d",&n);
-printf("\nEnter Process Burst Time\n");for(i=0;i<n;i++)
-{
-printf("P[%d]:",i+1);
-scanf("%d",&bt[i]);
-} wt[0]=0;
-for(i=1;i<n;i++)
-{ wt[i]=0;for(j=0;j<i;j++)
-wt[i]+=bt[j];
+int pid;
+int btime;
+int wtime;
+int ttime;
 }
-printf("\nProcess\t\tBurst Time\tWaiting Time\tTurnaround Time"); for(i=0;i<n;i++)
+p[10];
+int main()
 {
-tat[i]=bt[i]+wt[i]; avwt+=wt[i]; avtat+=tat[i];printf("\nP[%d]\t\t%d\t\t%d\t\t%d",i+1,bt[i],wt[i],tat[i]);
-} avwt/=i; avtat/=i;printf("\n\nAverage Waiting Time:%.2f",avwt);
-printf("\nAverage Turnaround Time:%.2f",avtat);
+int i,n;
+int towtwtime=0,totttime=0;
+printf("\n fcfs scheduling...\n");
+printf("enter the no of process");
+scanf("%d",&n);
+for(i=0;i<n;i++)
+{
+p[i].pid=1;
+printf("\n burst time of the process”);
+scanf("%d",&p[i].btime);
+}
+p[0].wtime=0;
+p[0].ttime=p[0].btime;
+totttime+=p[i].ttime;
+for(i=0;i<n;i++)
+{
+p[i].wtime=p[i-1].wtime+p[i-1].btim
+p[i].ttime=p[i].wtime+p[i].btime;
+totttime+=p[i].ttime;
+towtwtime+=p[i].wtime;
+}
+for(i=0;i<n;i++)
+{{
+printf("\n waiting time for process”);
+printf("\n turn around time for process”);
+printf("\n");
+}}
+printf("\n total waiting time :%d", totwtime );
+printf("\n average waiting time :%f",(float)totwtime/n);
+printf("\n total turn around time :%d",totttime);
+printf("\n average turn around time: :%f",(float)totttime/n);
 }
